@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { MenuNavbComponent } from './plantilla/menu-navb/menu-navb.component';
 import { FooterComponent } from './plantilla/footer/footer.component';
 import { InicioComponent } from './plantilla/inicio/inicio.component';
+import { ErrorComponent } from './plantilla/error/error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuNavbComponent,
     FooterComponent,
-    InicioComponent
+    InicioComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
