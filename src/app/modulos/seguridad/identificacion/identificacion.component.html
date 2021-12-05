@@ -1,45 +1,47 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="container">
+  <div class="col s12 l4 offset-14">
+    <div class="card grey ligthen-3">
+      <div class="card-content">
+<div class="col s12 m6 l4 z-depth-4 card-panel border-radius-6 login-card bg-opacity-8">
 
-<div class="container center">
-  <a href="#login" class="btn btn-large teal modal-trigger">Login</a>
+<form [formGroup]="fgValidador" (ngSubmit)="IdentificarUsuario()">
+    <div class="row">
+      <div class="input-field col s12">
+        <h5 class="ml-4">Iniciar Sesión</h5>
+      </div>
+    </div>
+    <div class="row margin">
+      <div class="input-field col s12">
+        <i class="material-icons prefix pt-2">mail_outline</i>
+        <input formControlName="usuario" id="email" type="email" class="validate">
+        <label for="email" class="center-align">Email</label>
+      </div>
+    </div>
+    <div class="row margin">
+      <div class="input-field col s12">
+        <i class="material-icons prefix pt-2">lock_outline</i>
+        <input formControlName="clave" id="password" type="password" class="validate">
+        <label for="password" class="">Clave</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+      <button [disabled]="!fgValidador.valid" type="submit" class="btn waves-effect waves-light border-round gradient-45deg-purple-deep-orange col s12">Iniciar Sesión</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6 m6 l6">
+        <p class="margin medium-small"><a href="
+          ">Registrate!</a></p>
+      </div>
+      <div class="input-field col s6 m6 l6">
+        <p class="margin right-align medium-small"><a href="">¿Olvidaste tu contraseña?</a>
+        </p>
+      </div>
+    </div>
+  </form>
 </div>
-
-<div id="login" class="modal ">
-  <h5 class="modal-close">&#10005;</h5>
-  <div class="modal-content center">
-    <h4>Login Form</h4>
-    <br>
-
-    <form action="#">
-
-      <div class="input-field">
-        <i class="material-icons prefix">person</i>
-        <input type="text" id="name">
-        <label for="name">Username</label>
-      </div>
-      <br>
-
-      <div class="input-field">
-        <i class="material-icons prefix">lock</i>
-        <input type="password" id="pass">
-        <label for="pass">Password</label>
-      </div>
-      <br>
-
-      <div class="left" style="margin-left:20px;">
-        <input type="checkbox" id="check">
-        <label for="check">Remember Me</label>
-      </div>
-      <br>
-      
-      <input type="submit" value="Login" class="btn btn-large">
-      
-    </form>
-  </div>
 </div>
-
-<script>
-    $(document).ready(function(){
-  		$('.modal').modal();
- });
-</script>
+</div>
+</div>
+</div>
