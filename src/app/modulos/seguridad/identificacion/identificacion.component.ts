@@ -10,6 +10,7 @@ export class IdentificacionComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

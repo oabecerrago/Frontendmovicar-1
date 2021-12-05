@@ -14,10 +14,10 @@ const routes: Routes = [
     pathMatch: 'full',
     redirectTo: '/inicio'
   },
-  {
+  /*{
     path: "**",
     component: ErrorComponent
-  },
+  },*/
   {
     path: "seguridad",
     loadChildren: () => import("./modulos/seguridad/seguridad.module").then(x => x.SeguridadModule)
