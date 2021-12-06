@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
 import { Router } from '@angular/router';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-identificacion',
@@ -29,8 +30,8 @@ export class IdentificacionComponent implements OnInit {
   IdentificarUsuario(){
     let usuario = this.fgValidador.controls["usuario"].value;
     let clave = this.fgValidador.controls["clave"].value;
-    alert(usuario)
-    alert("Identificado correctamente")
+    let claveCifrada = CryptoJS.MD5(clave).toString();
+    alert(claveCifrada);
   }
 
 }
