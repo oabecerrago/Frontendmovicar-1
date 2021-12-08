@@ -13,21 +13,20 @@ export class IdentificacionComponent implements OnInit {
 
 
   fgValidador: FormGroup = this.fb.group({
-    "usuario":['',[Validators.required, Validators.email]],
-    "clave":['',[Validators.required]]
+    "usuario": ['', [Validators.required, Validators.email]],
+    "clave": ['', [Validators.required]]
   });
 
   constructor(private fb: FormBuilder,
     private servicioSeguridad: SeguridadService,
     private router: Router) {
 
-     }
-
-  ngOnInit(): void {
-    
   }
 
-  IdentificarUsuario(){
+  ngOnInit(): void {
+  }
+
+  IdentificarUsuario() {
     let usuario = this.fgValidador.controls["usuario"].value;
     let clave = this.fgValidador.controls["clave"].value;
     let claveCifrada = CryptoJS.MD5(clave).toString();
