@@ -39,6 +39,14 @@ export class SeguridadService {
      })
    }
 
+   AlmacenarSesion(datos: ModeloIdentificar){
+     datos.estaIdentificado = true;
+     let stringDatos = JSON.stringify(datos);
+     localStorage.setItem("datosSesion", stringDatos);
+     this.RefrescarDatosSesion(datos)
+   }
+
+
    ObtenerInformacionSesion(){
      let datosString = localStorage.getItem("datosSesion");
      if(datosString){
@@ -47,5 +55,14 @@ export class SeguridadService {
      }else{
        return null;
      }
+   }
+   EliminarInformacionSesion(){
+     localStorage.removeItem("datosSesion");
+     this.RefrescarDatosSesion(new ModeloIdentificar());
+   }
+
+   SeInicioSesion(){
+     let datosString = localStorage.getItem("datosSesion");
+     return datosString
    }
 }
