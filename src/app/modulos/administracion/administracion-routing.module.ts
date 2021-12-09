@@ -28,11 +28,15 @@ const routes: Routes = [
   },
   //Componentes vehiculos
   {
+    path:"listar-vehiculos",
+    component: BuscarVehiculoComponent
+  },
+  {
     path: "crear-vehiculo",
     component: CrearVehiculoComponent
   },
   {
-    path: "editar-vehiculo",
+    path: "editar-vehiculo/:id",
     component: EditarVehiculoComponent
   },
   {
