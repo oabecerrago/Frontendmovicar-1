@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { ModeloIdentificar } from '../modelos/identificar.modelo';
-
+import { ModeloVehiculo } from '../modelos/vehiculo.modelo';
+import{Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,6 +15,7 @@ export class SeguridadService {
   constructor(private http: HttpClient) {
     this.VerificarSesionActual();
    }
+
 
    VerificarSesionActual(){
      let datos = this.ObtenerInformacionSesion();
